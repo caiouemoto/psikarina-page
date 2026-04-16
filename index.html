@@ -110,7 +110,7 @@
 <body class="bg-background text-on-surface spa-compact">
 <div aria-hidden="true" class="scroll-progress"><span data-scroll-progress></span></div>
 <!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-[#F4F3ED]/80 backdrop-blur-md transition-colors duration-300 relative">
+<nav class="site-header" data-site-header>
 <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
 <a class="font-['Newsreader'] text-2xl font-semibold text-[#5E6B6B] tracking-tight" href="#inicio">Psi Karina Guimarães</a>
 <div class="hidden md:flex items-center gap-3" data-spa-nav>
@@ -134,7 +134,7 @@
 </div>
 </div>
 </nav>
-<main>
+<main class="mt-20">
 <!-- New Hero Section (formerly About Section) -->
 <section class="pt-40 pb-24 md:pt-56 md:pb-40 px-8 hero-gradient" id="inicio">
 <div class="max-w-7xl mx-auto">
@@ -570,5 +570,6 @@
         </p>
 </div>
 </footer>
+<button aria-label="Voltar ao início" class="scroll-to-top-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-primary/20 text-secondary hover:bg-primary/30 transition-all" data-scroll-to-top>Voltar ao topo</button>
 <script src="js/main.js"></script>
 </body></html>
