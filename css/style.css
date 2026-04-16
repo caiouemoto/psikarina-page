@@ -141,6 +141,48 @@ h4 {
 }
 
 @media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    img,
+    svg,
+    iframe {
+        max-width: 100%;
+    }
+
+    nav .max-w-7xl {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+    }
+
+    nav .font-\[\'Newsreader\'\].text-2xl {
+        font-size: 1.3rem;
+        line-height: 1.2;
+    }
+
+    #mobile-menu {
+        left: 0.75rem;
+        right: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    #mobile-menu a {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .scroll-progress {
+        height: 3px;
+    }
+
+    .spa-compact main > section {
+        scroll-margin-top: 6.5rem;
+    }
+
     .px-8,
     .px-12 {
         padding-left: 1rem;
@@ -182,7 +224,7 @@ h4 {
     }
 
     .text-6xl {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
         line-height: 1.05;
     }
 
@@ -193,6 +235,51 @@ h4 {
 
     .rounded-3xl {
         border-radius: 1.25rem;
+    }
+
+    .p-10,
+    .p-12 {
+        padding: 1.4rem;
+    }
+
+    .text-lg,
+    .md\:text-xl {
+        font-size: 1.02rem;
+        line-height: 1.6;
+    }
+
+    summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    #avaliacoes {
+        overflow: hidden;
+    }
+
+    #avaliacoes iframe,
+    #avaliacoes [class*="trustindex"],
+    #avaliacoes [class*="ti-widget"],
+    #avaliacoes [id*="trustindex"] {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    #contato .flex.flex-row.flex-wrap.sm\:flex-nowrap.gap-3.pt-8 {
+        gap: 0.65rem;
+    }
+
+    #contato .flex.flex-row.flex-wrap.sm\:flex-nowrap.gap-3.pt-8 > a {
+        min-height: 46px;
+    }
+
+    footer .gap-4 {
+        gap: 0.7rem;
+    }
+
+    footer .text-sm {
+        font-size: 0.9rem;
     }
 
     .flex.flex-wrap.gap-4.items-center {
@@ -246,6 +333,82 @@ h4 {
 
 }
 
+@media (max-width: 480px) {
+    nav .font-\[\'Newsreader\'\].text-2xl {
+        font-size: 1.15rem;
+    }
+
+    .text-5xl {
+        font-size: 2rem;
+    }
+
+    .text-4xl {
+        font-size: 1.8rem;
+    }
+
+    #contato .flex.flex-row.flex-wrap.sm\:flex-nowrap.gap-3.pt-8 {
+        flex-direction: column;
+    }
+
+    #contato .flex.flex-row.flex-wrap.sm\:flex-nowrap.gap-3.pt-8 > a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .timeline-item {
+        padding-left: 3.1rem;
+    }
+
+    .timeline::before,
+    .timeline-dot {
+        left: 1.1rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .spa-compact #inicio {
+        padding-top: 6.75rem;
+        padding-bottom: 3.2rem;
+    }
+
+    .spa-compact #inicio h1 {
+        font-size: 2.05rem;
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+    }
+
+    .spa-compact #inicio .text-lg,
+    .spa-compact #inicio .md\:text-xl {
+        font-size: 0.98rem;
+        line-height: 1.58;
+    }
+
+    .spa-compact #inicio .pt-6 {
+        padding-top: 0.75rem;
+    }
+
+    .spa-compact .py-24,
+    .spa-compact .py-20,
+    .spa-compact .py-16,
+    .spa-compact .pt-28,
+    .spa-compact .pb-20 {
+        padding-top: 3.2rem;
+        padding-bottom: 3.2rem;
+    }
+
+    .spa-compact .mb-20 {
+        margin-bottom: 2.4rem;
+    }
+
+    .spa-compact .mb-12 {
+        margin-bottom: 1.9rem;
+    }
+
+    .spa-compact .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 1.15rem;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .tilt-3d,
     .tilt-3d:hover,
@@ -290,3 +453,88 @@ h4 {
 .hover\:bg-primary:hover { background-color: #8A9A8B; }
 .hover\:bg-primary\/25:hover { background-color: rgba(138, 154, 139, 0.25); }
 .hover\:text-on-primary:hover { color: #ffffff; }
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(94, 107, 107, 0.12);
+    z-index: 60;
+    pointer-events: none;
+}
+
+.scroll-progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #8A9A8B 0%, #5E6B6B 100%);
+    transition: width 140ms ease-out;
+}
+
+.spa-compact main > section {
+    scroll-margin-top: 7.5rem;
+}
+
+[data-spa-nav] a.is-active {
+    background-color: #8A9A8B !important;
+    color: #ffffff !important;
+    text-decoration: none;
+    box-shadow: 0 6px 14px rgba(94, 107, 107, 0.22);
+}
+
+@media (min-width: 769px) {
+    .spa-compact .pt-56 {
+        padding-top: 12rem;
+    }
+
+    .spa-compact .pt-40 {
+        padding-top: 9rem;
+    }
+
+    .spa-compact .py-40,
+    .spa-compact .py-32 {
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+    }
+
+    .spa-compact .py-28,
+    .spa-compact .py-24,
+    .spa-compact .py-20,
+    .spa-compact .pt-28,
+    .spa-compact .pb-32,
+    .spa-compact .pb-24,
+    .spa-compact .pb-20 {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+
+    .spa-compact .gap-24 {
+        gap: 3.5rem;
+    }
+
+    .spa-compact .gap-16 {
+        gap: 2.5rem;
+    }
+
+    .spa-compact .text-7xl {
+        font-size: 4rem;
+    }
+
+    .spa-compact .text-6xl {
+        font-size: 3.35rem;
+    }
+
+    .spa-compact .text-5xl {
+        font-size: 2.65rem;
+    }
+
+    .spa-compact .p-12 {
+        padding: 2.25rem;
+    }
+
+    .spa-compact .p-10 {
+        padding: 2rem;
+    }
+}

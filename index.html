@@ -106,16 +106,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
 </head>
-<body class="bg-background text-on-surface">
+<body class="bg-background text-on-surface spa-compact">
+<div aria-hidden="true" class="scroll-progress"><span data-scroll-progress></span></div>
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-[#F4F3ED]/80 backdrop-blur-md transition-colors duration-300 relative">
 <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
-<a class="font-['Newsreader'] text-2xl font-semibold text-[#5E6B6B] tracking-tight" href="index.html">Psi Karina Guimarães</a>
-<div class="hidden md:flex items-center gap-3">
-<a aria-current="page" class="bg-primary text-on-primary px-4 py-2 rounded-lg font-medium shadow-sm transition-all" href="index.html">Home</a>
-<a class="bg-primary/15 text-secondary px-4 py-2 rounded-lg font-medium hover:bg-primary/25 transition-all" href="servicos.html">Serviços</a>
-<a class="bg-primary/15 text-secondary px-4 py-2 rounded-lg font-medium hover:bg-primary/25 transition-all" href="trajetoria.html">Trajetória</a>
-<a class="bg-primary/15 text-secondary px-4 py-2 rounded-lg font-medium hover:bg-primary/25 transition-all" href="contato.html">Contato</a>
+<a class="font-['Newsreader'] text-2xl font-semibold text-[#5E6B6B] tracking-tight" href="#inicio">Psi Karina Guimarães</a>
+<div class="hidden md:flex items-center gap-3" data-spa-nav>
+<a aria-current="page" class="bg-primary text-on-primary px-4 py-2 rounded-lg font-medium shadow-sm transition-all" href="#inicio">Home</a>
+<a class="bg-primary/15 text-secondary px-4 py-2 rounded-lg font-medium hover:bg-primary/25 transition-all" href="#servicos">Serviços</a>
+<a class="bg-primary/15 text-secondary px-4 py-2 rounded-lg font-medium hover:bg-primary/25 transition-all" href="#trajetoria">Trajetória</a>
+<a class="bg-primary/15 text-secondary px-4 py-2 rounded-lg font-medium hover:bg-primary/25 transition-all" href="#contato">Contato</a>
 </div>
 <!-- Mobile Menu Toggle -->
 <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="md:hidden text-primary" data-mobile-menu-toggle>
@@ -123,18 +124,18 @@
 </button>
 </div>
 <div class="md:hidden hidden absolute left-4 right-4 top-full mt-2 rounded-2xl border border-stone-200 bg-sand/95 shadow-xl backdrop-blur-md p-4" id="mobile-menu" data-mobile-menu-panel>
-<div class="flex flex-col gap-2">
-<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="index.html">Home</a>
-<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="servicos.html">Serviços</a>
-<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="trajetoria.html">Trajetória</a>
-<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="contato.html">Contato</a>
+<div class="flex flex-col gap-2" data-spa-nav>
+<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="#inicio">Home</a>
+<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="#servicos">Serviços</a>
+<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="#trajetoria">Trajetória</a>
+<a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="#contato">Contato</a>
 <a class="px-4 py-3 rounded-xl bg-white/80 text-secondary font-medium" href="https://www.instagram.com/psi.karinaguimaraes/" target="_blank" rel="noopener noreferrer">Instagram</a>
 </div>
 </div>
 </nav>
 <main>
 <!-- New Hero Section (formerly About Section) -->
-<section class="pt-40 pb-24 md:pt-56 md:pb-40 px-8 hero-gradient" id="sobre">
+<section class="pt-40 pb-24 md:pt-56 md:pb-40 px-8 hero-gradient" id="inicio">
 <div class="max-w-7xl mx-auto">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
 <div class="order-2 lg:order-1 relative">
@@ -154,7 +155,7 @@
                     </p>
 </div>
 <div class="pt-6">
-<a href="trajetoria.html" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-on-primary transition-all">
+<a href="#trajetoria" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-on-primary transition-all">
                         Minha trajetória profissional
                     </a>
 </div>
@@ -173,7 +174,7 @@
                 Apoio especializado em psicoterapia individual em Campinas e região para ansiedade, autoestima, relacionamentos e desenvolvimento emocional.
             </p>
 <div class="flex flex-wrap gap-4 pt-4">
-<a class="bg-secondary text-white font-semibold px-8 py-4 inline-flex items-center gap-2 rounded-lg hover:bg-secondary/80 transition-all" href="servicos.html">
+<a class="bg-secondary text-white font-semibold px-8 py-4 inline-flex items-center gap-2 rounded-lg hover:bg-secondary/80 transition-all" href="#servicos-detalhes">
                     Conheça meu trabalho
                     <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
 </a>
@@ -241,6 +242,200 @@
 </div>
 </div>
 </section>
+<!-- Services Detail Section -->
+<section class="pt-28 pb-20 md:pt-40 md:pb-32 px-8 hero-gradient" id="servicos-detalhes">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+<article class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-[#D9CEB9] shadow-sm text-card">
+<p class="inline-block px-3 py-1 text-xs uppercase tracking-[0.2em] font-bold text-primary bg-primary/10 rounded-full">A essência do meu trabalho</p>
+<h2 class="mt-6 text-3xl md:text-5xl font-semibold leading-tight text-on-surface">Psicoterapia individual em Campinas e região para ansiedade, depressão e autoconhecimento</h2>
+<p class="mt-4 text-base md:text-lg leading-relaxed text-tertiary">
+                                Também realizo atendimento psicológico para adultos e casais, com escuta qualificada e plano terapêutico personalizado.
+                        </p>
+<p class="mt-6 text-base md:text-lg leading-relaxed text-tertiary">
+                                Gosto de observar as pedras do mar e me espantar com as características singulares que cada uma apresenta, mesmo tendo sido produzidas, em sua maioria, sob as mesmas condições.
+                        </p>
+<p class="mt-4 text-base md:text-lg leading-relaxed text-tertiary">
+                                Frankl dizia que uma das principais características da existência humana está na capacidade de se elevar acima de suas condições, de crescer para além delas. E isso faz com que o ser humano seja capaz de mudar o mundo e a si mesmo para melhor, quando necessário.
+                        </p>
+<p class="mt-4 text-base md:text-lg leading-relaxed text-on-surface font-semibold">
+                                Toda a minha trajetória de vida me levou a entender que ajudar as pessoas a se lapidarem e construírem um mundo melhor é a minha missão.
+                        </p>
+<p class="mt-4 text-base md:text-lg leading-relaxed text-tertiary">
+                            Hoje, na psicologia clínica, alcanço o marco de mais de 300 vidas acompanhadas em processos de transformação por meio do autoconhecimento e da autorregulação emocional.
+                        </p>
+</article>
+<div class="tilt-3d rounded-3xl overflow-hidden border border-[#D9CEB9] bg-sand shadow-sm min-h-[340px] relative">
+<img src="assets/rocks.jpg" alt="Pedras do mar" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/15 to-transparent"></div>
+</div>
+</div>
+</section>
+<section class="py-20 px-8 bg-background relative overflow-hidden">
+<div class="absolute top-0 left-0 w-32 h-32 dotted-pattern opacity-50"></div>
+<div class="absolute bottom-0 right-0 w-40 h-40 dotted-pattern opacity-40"></div>
+<div class="absolute -top-10 right-10 w-44 h-44 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="absolute -bottom-10 left-10 w-40 h-40 rounded-full bg-secondary/10 blur-3xl"></div>
+<div class="max-w-5xl mx-auto relative">
+<div class="text-center mb-10">
+<span class="text-primary font-bold uppercase tracking-[0.2em] text-xs">Experiência profissional</span>
+<h2 class="mt-4 text-3xl md:text-5xl font-semibold leading-tight">Experiência clínica e instrumentos terapêuticos</h2>
+</div>
+<article class="bg-white/90 rounded-3xl p-6 sm:p-8 md:p-12 border border-sand/50 shadow-md relative overflow-hidden">
+<div class="absolute -top-16 -right-16 w-36 h-36 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-7">
+<div class="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 px-5 py-4">
+<p class="text-xs uppercase tracking-[0.18em] text-secondary font-bold">Marco clínico</p>
+<p class="mt-2 text-2xl md:text-3xl font-semibold text-secondary">300+ casos</p>
+<p class="mt-1 text-sm text-tertiary">Acompanhamento voltado à transformação com autoconhecimento e autorregulação.</p>
+</div>
+<div class="rounded-2xl border border-secondary/20 bg-gradient-to-br from-secondary/10 to-secondary/5 px-5 py-4">
+<p class="text-xs uppercase tracking-[0.18em] text-secondary font-bold">Abordagem</p>
+<p class="mt-2 text-xl md:text-2xl font-semibold text-secondary">TCC - Terapia Cognitivo-Comportamental</p>
+<p class="mt-1 text-sm text-tertiary">Planejamento terapêutico individualizado com foco em segurança e eficiência clínica.</p>
+</div>
+</div>
+<p class="text-base sm:text-lg leading-relaxed text-tertiary">
+                            Com uma experiência construída ao longo do atendimento e estudo de <strong class="text-on-surface">mais de 300 casos</strong>, me encontro familiarizada com demandas e transtornos dos mais diversos, incluindo os mais recorrentes como transtornos de ansiedade e depressão, burnout, crises relacionais e desenvolvimento de habilidades sociais.
+                        </p>
+<p class="mt-5 text-base sm:text-lg leading-relaxed text-tertiary">
+                            Entre as demandas atendidas, atuo com foco técnico e planejamento individualizado nos seguintes casos:
+                        </p>
+<div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+<div class="group rounded-2xl border border-primary/25 bg-primary/10 px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="neurology">neurology</span>
+<span class="text-xs font-bold tracking-wider text-white bg-secondary px-2 py-1 rounded-full">TDAH</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno do Déficit de Atenção e Hiperatividade</p>
+</div>
+<div class="group rounded-2xl border border-primary/25 bg-primary/10 px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="diversity_3">diversity_3</span>
+<span class="text-xs font-bold tracking-wider text-white bg-secondary px-2 py-1 rounded-full">TEA</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno do Espectro Autista</p>
+</div>
+<div class="group rounded-2xl border border-sand/60 bg-white px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="sync_problem">sync_problem</span>
+<span class="text-xs font-bold tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-full">TOC</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno Obsessivo-Compulsivo</p>
+</div>
+<div class="group rounded-2xl border border-sand/60 bg-white px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="alt_route">alt_route</span>
+<span class="text-xs font-bold tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-full">TPB</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno de Personalidade Borderline</p>
+</div>
+<div class="group rounded-2xl border border-sand/60 bg-white px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="tune">tune</span>
+<span class="text-xs font-bold tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-full">TAB</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno Afetivo Bipolar</p>
+</div>
+<div class="group rounded-2xl border border-primary/25 bg-primary/10 px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="bolt">bolt</span>
+<span class="text-xs font-bold tracking-wider text-white bg-secondary px-2 py-1 rounded-full">TAG</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno de Ansiedade Generalizada</p>
+</div>
+<div class="group rounded-2xl border border-sand/60 bg-white px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="shield">shield</span>
+<span class="text-xs font-bold tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-full">TEPT</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno de Estresse Pós-Traumático</p>
+</div>
+<div class="group rounded-2xl border border-sand/60 bg-white px-4 sm:px-5 py-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="mood">mood</span>
+<span class="text-xs font-bold tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-full">TDM</span>
+</div>
+<p class="text-sm leading-relaxed text-tertiary">Transtorno Depressivo Maior</p>
+</div>
+</div>
+<p class="mt-6 text-base sm:text-lg leading-relaxed text-tertiary">
+                            Para o manejo dessas e outras questões, me utilizo principalmente das <strong class="text-on-surface">teorias e técnicas da Terapia Cognitivo-Comportamental</strong>, com o objetivo de auxiliar cada pessoa em sua rota de autodesenvolvimento da maneira mais segura e eficiente possível.
+                        </p>
+</article>
+</div>
+</section>
+<!-- Trajectory Section -->
+<section class="pt-40 pb-24 md:pt-56 md:pb-40 px-8 hero-gradient" id="trajetoria">
+<div class="max-w-5xl mx-auto">
+<div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-sand/40 shadow-sm text-center">
+<span class="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">Minha história</span>
+<h2 class="text-4xl md:text-6xl font-light leading-[1.1] mb-6">Trajetória Profissional</h2>
+<p class="text-lg md:text-xl text-tertiary max-w-2xl mx-auto">Uma jornada de aprendizado, crescimento e dedicação à saúde emocional e à atuação clínica em psicologia em Campinas e região.</p>
+</div>
+</div>
+</section>
+<section class="py-20 md:py-32 px-8 bg-background">
+<div class="max-w-6xl mx-auto">
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-primary mb-2">19 anos</p>
+<h3 class="text-2xl font-semibold text-secondary mb-3">Primeiro cargo de liderança</h3>
+<p class="text-tertiary">Iniciei minha jornada em gestão de pessoas e desenvolvimento de equipes, consolidando habilidades essenciais de liderança.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-secondary mb-2">22 anos</p>
+<h3 class="text-2xl font-semibold text-primary mb-3">Formação em Comunicação Institucional</h3>
+<p class="text-tertiary">Desenvolvi conhecimento aprofundado em comunicação estratégica e relacionamento institucional.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-primary mb-2">22 anos</p>
+<h3 class="text-2xl font-semibold text-secondary mb-3">Primeiro cargo de supervisão</h3>
+<p class="text-tertiary">Assumi responsabilidades de supervisão, orientando e desenvolvendo profissionais em minhas equipes.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-secondary mb-2">23 anos</p>
+<h3 class="text-2xl font-semibold text-primary mb-3">Primeiro cargo de gestão</h3>
+<p class="text-tertiary">Ampliei minha atuação estratégica, gerenciando processos e recursos para o sucesso organizacional.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-secondary mb-2">27 anos</p>
+<h3 class="text-2xl font-semibold text-secondary mb-3">Ingresso na docência</h3>
+<p class="text-tertiary">Iniciei minha jornada como educadora, compartilhando conhecimento e formando novos profissionais.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-primary mb-2">33 anos</p>
+<h3 class="text-2xl font-semibold text-primary mb-3">Formação em Psicologia</h3>
+<p class="text-tertiary">Completei minha graduação em Psicologia, formalizando minha paixão pela saúde mental e bem-estar.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-all border border-sand/40">
+<p class="text-sm uppercase tracking-[0.2em] font-bold text-secondary mb-2">33 anos</p>
+<h3 class="text-2xl font-semibold text-secondary mb-3">Ingresso na atuação clínica</h3>
+<p class="text-tertiary">Iniciei minha prática clínica como psicóloga, dedicando-me ao acompanhamento terapêutico e transformação emocional de meus pacientes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- FAQ Section -->
 <section class="py-20 md:py-28 px-8 bg-sand/40" id="faq">
 <div class="max-w-5xl mx-auto">
@@ -268,32 +463,80 @@
 </div>
 </div>
 </section>
-<!-- Testimonial Section -->
-<section class="pt-12 pb-24 md:pt-16 md:pb-40 bg-surface">
-<div class="max-w-5xl mx-auto px-8 text-center">
-<div class="space-y-16">
-<div class="bg-surface-container-lowest p-12 md:p-20 rounded-xl relative shadow-sm border border-sand/30">
-<span class="material-symbols-outlined text-primary/40 text-6xl md:text-7xl mb-6 block" data-icon="format_quote" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-<blockquote class="text-2xl md:text-4xl font-headline italic leading-relaxed text-secondary relative z-10">
-                    "Você não é produto das circunstancias, você é produto das suas decisões."
-                </blockquote>
-<cite class="mt-8 block font-body not-italic font-bold text-primary tracking-widest uppercase text-sm relative z-10">
-                    — Viktor Frankl, Psicoterapeuta austríaco
-                </cite>
-<div class="mt-10 flex justify-center">
-<div class="tilt-3d p-1.5 rounded-full bg-gradient-to-br from-primary via-secondary to-primary shadow-[0_10px_25px_rgba(94,107,107,0.25)]">
-<img src="assets/frankl.jpg" alt="Viktor Frankl" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white" loading="lazy" decoding="async"/>
+<section class="py-16 md:py-24 px-8 bg-surface" id="avaliacoes">
+<div class="max-w-5xl mx-auto text-center mb-8 md:mb-12">
+<span class="inline-block px-4 py-2 rounded-full bg-white border border-sand/40 text-xs font-bold uppercase tracking-[0.2em] text-secondary shadow-sm">Avaliações</span>
+<div class="mt-5 bg-white/80 rounded-2xl border border-sand/40 shadow-sm px-6 py-7 md:px-10 md:py-9">
+<h2 class="text-3xl md:text-5xl font-light leading-tight">Depoimentos</h2>
+<p class="mt-3 text-tertiary text-base md:text-lg">Experiências de pacientes em avaliações públicas.</p>
+</div>
+</div>
+<script defer async src='https://cdn.trustindex.io/loader.js?ac148896982879993b463fdbb9d'></script>
+</section>
+<!-- Contact Section -->
+<section class="py-16 sm:py-24 md:py-32 bg-secondary text-on-primary rounded-3xl mx-4 md:mx-8 overflow-hidden" id="contato">
+<div class="max-w-7xl mx-auto px-4 sm:px-8">
+<div class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+<div class="bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-10 md:p-12 text-left shadow-lg backdrop-blur-sm w-full min-w-0">
+<h2 class="text-4xl md:text-5xl font-light leading-tight">Agendamento de consulta psicológica em Campinas e região</h2>
+<p class="text-lg opacity-90 font-body mt-4 max-w-lg">
+                        Agende sua consulta psicológica e dê o primeiro passo para um acompanhamento acolhedor, ético e personalizado em Campinas e região.
+                    </p>
+<div class="flex flex-row flex-wrap sm:flex-nowrap gap-3 pt-8">
+<a href="https://wa.me/551931990931" target="_blank" class="inline-flex w-auto items-center justify-center gap-2.5 bg-background text-secondary px-5 py-3 rounded-xl font-semibold text-sm sm:text-base text-center whitespace-nowrap hover:bg-primary hover:text-on-primary transition-all shadow-lg">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded bg-[#25D366]" aria-hidden="true">
+<svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.5 12.1c0 4.7-3.8 8.5-8.5 8.5-1.5 0-2.9-.4-4.2-1.1L3.8 20l1.5-3.8c-.8-1.2-1.2-2.7-1.2-4.2 0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 8.9c.2-.5.4-.5.7-.5h.6c.2 0 .5 0 .7.4.2.4.8 1.8.9 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.2.8.2.4.8 1.3 1.7 2.1 1.2 1 2.2 1.3 2.6 1.5.4.2.6.1.8-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 2 .9 2.3 1 .3.1.5.2.5.4 0 .2 0 1.2-.8 2-1 .9-2.2 1-3 .8-.8-.2-2.4-.9-4.1-2.4-2-1.8-3.2-4-3.5-4.5-.3-.5-.7-1.4-.7-2.5 0-1 .5-1.5.7-1.7Z" fill="white"/>
+</svg>
+</span>
+<span>Agendar via WhatsApp</span>
+                        </a>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=psi.karinaguimaraes.rl@gmail.com&su=Agendamento%20de%20consulta" target="_blank" rel="noopener noreferrer" class="inline-flex w-auto items-center justify-center gap-2.5 border border-on-primary/30 text-on-primary px-5 py-3 rounded-xl font-semibold text-sm sm:text-base text-center whitespace-nowrap hover:bg-on-primary/10 transition-all">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded bg-white/10" aria-hidden="true">
+<svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="2"/>
+<path d="M4 7l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+<span>Enviar E-mail</span>
+                        </a>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="image-3d-effect tilt-3d aspect-[4/3] rounded-2xl bg-white/5 border-4 border-white/10 overflow-hidden">
+<img src="assets/contact.jpg" alt="Contato Psi Karina Guimarães" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
 </div>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-<div class="p-8 border-l-2 border-primary/30 italic font-body text-tertiary">
-                    "Excelente profissional, acolhedora e muito técnica ao mesmo tempo."
-                    <span class="block mt-4 font-bold text-on-surface not-italic text-sm">— Caio B.</span>
 </div>
-<div class="p-8 border-l-2 border-primary/30 italic font-body text-tertiary">
-                    "Encontrei a clareza que precisava em um momento muito difícil da minha vida."
-                    <span class="block mt-4 font-bold text-on-surface not-italic text-sm">— Filipe L.</span>
+</section>
+<section class="py-16 sm:py-24 md:py-32 rounded-3xl mx-4 md:mx-8 bg-[#b8ad9a] overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-8">
+<div class="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+<div class="bg-sand text-secondary rounded-3xl border border-stone-300/30 p-6 sm:p-10 md:p-16 shadow-lg text-left relative overflow-hidden w-full min-w-0">
+<div class="relative z-10">
+<h2 class="text-3xl md:text-5xl font-light mb-4">Conecte-se nas redes</h2>
+<p class="text-secondary/80 text-lg max-w-md mb-10">
+                            Acompanhe conteúdo de apoio emocional e dicas no Instagram.
+                        </p>
+<div class="flex justify-start">
+<a class="inline-flex w-full sm:w-auto items-center justify-center sm:justify-start gap-4 bg-white text-secondary px-8 py-4 rounded-xl shadow-md hover:shadow-xl transition-all group" href="https://www.instagram.com/psi.karinaguimaraes/" target="_blank">
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#4f5bd5] via-[#d62976] to-[#feda75] shadow-sm" aria-hidden="true">
+<svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="white" stroke-width="2.2"/>
+<circle cx="12" cy="12" r="4.2" stroke="white" stroke-width="2.2"/>
+<circle cx="17.2" cy="6.8" r="1.4" fill="white"/>
+</svg>
+</span>
+<span class="font-bold text-lg">Seguir no Instagram</span>
+</a>
+</div>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="image-3d-effect tilt-3d aspect-[4/3] rounded-2xl bg-sand/30 border-4 border-white/20 overflow-hidden">
+<img src="assets/insta.jpg" alt="Instagram Psi Karina Guimarães" class="w-full h-full object-cover" loading="lazy" decoding="async"/>
 </div>
 </div>
 </div>
@@ -304,16 +547,16 @@
 <footer class="bg-sand border-t border-outline/10">
 <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-7xl mx-auto">
 <div class="space-y-4 text-center md:text-left">
-<a class="font-['Newsreader'] text-xl text-secondary tracking-tight" href="index.html">Psi Karina Guimarães</a>
+<a class="font-['Newsreader'] text-xl text-secondary tracking-tight" href="#inicio">Psi Karina Guimarães</a>
 <p class="font-['Manrope'] text-sm tracking-wide text-stone-500">
                 Psicóloga Clínica | CRP 06/158324
             </p>
 </div>
 <div class="flex flex-wrap gap-4 items-center">
-<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="index.html">Home</a>
-<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="servicos.html">Serviços</a>
-<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="trajetoria.html">Trajetória</a>
-<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="contato.html">Contato</a>
+<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="#inicio">Home</a>
+<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="#servicos">Serviços</a>
+<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="#trajetoria">Trajetória</a>
+<a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="#contato">Contato</a>
 <a class="font-['Manrope'] text-sm tracking-wide text-stone-500 hover:text-primary transition-opacity underline decoration-primary/30 underline-offset-4" href="https://www.instagram.com/psi.karinaguimaraes/" target="_blank" rel="noopener noreferrer">Instagram</a>
 </div>
 <p class="font-['Manrope'] text-sm tracking-wide text-stone-500 opacity-80">

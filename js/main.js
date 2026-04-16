@@ -75,6 +75,78 @@
         });
     }
 
+    function initScrollProgress() {
+        var progress = document.querySelector('[data-scroll-progress]');
+
+        if (!progress) {
+            return;
+        }
+
+        function updateProgress() {
+            var doc = document.documentElement;
+            var scrollTop = window.scrollY || doc.scrollTop || 0;
+            var maxScroll = Math.max(doc.scrollHeight - window.innerHeight, 1);
+            var percent = Math.min((scrollTop / maxScroll) * 100, 100);
+            progress.style.width = percent.toFixed(2) + '%';
+        }
+
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+    }
+
+    function initSectionSpy() {
+        var navLinks = Array.from(document.querySelectorAll('[data-spa-nav] a[href^="#"]'));
+
+        if (!navLinks.length) {
+            return;
+        }
+
+        var idSet = {};
+        navLinks.forEach(function (link) {
+            var id = link.getAttribute('href').slice(1);
+            if (id) {
+                idSet[id] = true;
+            }
+        });
+
+        var sections = Object.keys(idSet)
+            .map(function (id) {
+                return document.getElementById(id);
+            })
+            .filter(Boolean);
+
+        if (!sections.length) {
+            return;
+        }
+
+        function setActive(id) {
+            navLinks.forEach(function (link) {
+                var active = link.getAttribute('href') === '#' + id;
+                link.classList.toggle('is-active', active);
+            });
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    setActive(entry.target.id);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '-42% 0px -42% 0px',
+            threshold: 0
+        });
+
+        sections.forEach(function (section) {
+            observer.observe(section);
+        });
+
+        setActive(sections[0].id);
+    }
+
+
     function runRevealAnimation() {
         if (prefersReducedMotion()) {
             return;
@@ -118,6 +190,8 @@
         runRevealAnimation();
         initTilt3D();
         initMobileMenu();
+        initScrollProgress();
+        initSectionSpy();
     }
 
     if (document.readyState === 'complete') {
