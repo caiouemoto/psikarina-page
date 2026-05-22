@@ -204,6 +204,68 @@
         window.addEventListener('resize', updateActiveByScroll);
     }
 
+    function initSpecialtyModal() {
+        var modal = document.getElementById('specialty-modal');
+        if (!modal) return;
+        if (modal.dataset.ready === '1') return;
+        modal.dataset.ready = '1';
+
+        var closeBtn = document.getElementById('specialty-modal-close');
+        var titleEl = document.getElementById('specialty-modal-title');
+        var bodyEl = document.getElementById('specialty-modal-body');
+
+        var contentMap = {
+            'TAG': {
+                title: 'Transtorno de Ansiedade Generalizada (TAG)',
+                body: '<p>Atendimento com técnicas da Terapia Cognitivo-Comportamental (TCC) para manejo de ansiedade. Sessões presenciais em Indaiatuba e terapia online para quem prefere acompanhamento remoto.</p><p class="mt-3">Procure por "psicóloga para ansiedade em Indaiatuba" para mais informações e agende uma avaliação.</p>'
+            },
+            'TDM': {
+                title: 'Transtorno Depressivo Maior',
+                body: '<p>Intervenções baseadas em TCC para sintomas depressivos, atividade gradativa e reestruturação cognitiva. Disponível presencialmente e online.</p>'
+            },
+            'TOC': {
+                title: 'Transtorno Obsessivo-Compulsivo (TOC)',
+                body: '<p>Uso de protocolos TCC específicos para exposição e prevenção de resposta (EPR) e manejo de rituais.</p>'
+            },
+            'TDAH': {
+                title: 'TDAH',
+                body: '<p>Intervenções psicoeducativas, estratégias de organização e manejo de atenção, com plano terapêutico personalizado.</p>'
+            },
+            'TEA': { title: 'Transtorno do Espectro Autista', body: '<p>Apoio e orientação para desenvolvimento de habilidades sociais, comunicação e intervenções adaptadas ao adulto e família.</p>' },
+            'TPB': { title: 'Transtorno de Personalidade Borderline', body: '<p>Atuação com foco em regulação emocional, limites e estratégias de enfrentamento em contexto terapêutico seguro.</p>' },
+            'TAB': { title: 'Transtorno Afetivo Bipolar', body: '<p>Acompanhamento psicoterapêutico complementar ao tratamento médico, com foco em stabilização de rotinas e prevenção de recaídas.</p>' },
+            'TEPT': { title: 'Transtorno de Estresse Pós-Traumático', body: '<p>Protocolos baseados em evidência para processamento e manejo de memórias traumáticas, com cuidado e ritmo terapêutico ajustado ao paciente.</p>' }
+        };
+
+        function openModal(key) {
+            var data = contentMap[key] || { title: key, body: '<p>Informações sobre esta especialidade. Agende uma avaliação para saber mais.</p>' };
+            titleEl.innerText = data.title;
+            bodyEl.innerHTML = data.body;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+
+        var cards = Array.from(document.querySelectorAll('.disorder-card'));
+        cards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                var badge = card.querySelector('.disorder-badge');
+                var key = badge ? badge.innerText.trim() : '';
+                openModal(key);
+            });
+            card.style.cursor = 'pointer';
+        });
+    }
+
     function runRevealAnimation() {
         if (prefersReducedMotion()) {
             return;
@@ -251,6 +313,7 @@
         initHeaderScrollState();
         initScrollToTopBtn();
         initSectionSpy();
+        initSpecialtyModal();
     }
 
     if (document.readyState === 'complete') {
